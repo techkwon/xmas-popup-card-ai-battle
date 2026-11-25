@@ -1,5 +1,7 @@
 # 크리스마스 팝업 카드 — AI로 만드는 움직이는 종이 카드
 
+▶ 대결 과정 영상: [누구나쉽게 19편 — 크리스마스 카드도 이제 AI로 만드는 시대 딸깍](https://youtu.be/LpUJPs1qOpk)
+
 three.js와 [papercraft 키트](https://github.com/xikhar/papercraft)(MIT)로 만든 3D 종이 팝업 크리스마스 카드.
 카드가 닫힌 채 시작해 스스로 열리고, 썰매·스케이터·연기·눈 같은 종이 장치가 움직이며, 메시지가 종이에 손글씨로 적힌다.
 
