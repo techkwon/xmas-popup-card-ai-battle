@@ -1,12 +1,13 @@
-// The card's message: read from the URL (?to=&msg=&from=), a small "write a message" panel that reloads the card with
-// the new words, and a share link that carries them. Nothing is sent anywhere: the words live only in the link.
+// The card's message: read from the link's fragment (#to=&msg=&from=, never sent to the web server; ?to=&msg=&from= in
+// the query still works for older links and the capture tools), a small "write a message" panel that reloads the card
+// with the new words, and a share link that carries them. Nothing is stored or sent anywhere by this code.
 const LIMIT = { to: 24, msg: 90, from: 24 };
 export const DEFAULT_MESSAGE = { to: '소중한 너에게', msg: '메리 크리스마스! 올해도 정말 고마웠어. 따뜻하고 행복한 연말 보내!', from: '산타가' };
 
-export function getMessage(search = location.search) {
-  const q = new URLSearchParams(search), out = {};
+export function getMessage(search = location.search, hash = location.hash) {
+  const q = new URLSearchParams(search), h = new URLSearchParams(hash.replace(/^#/, '')), out = {};
   for (const k of ['to', 'msg', 'from']) {
-    const v = q.get(k);
+    const v = h.has(k) ? h.get(k) : q.get(k);
     out[k] = (v === null ? DEFAULT_MESSAGE[k] : v).replace(/[\u0000-\u001f]/g, ' ').trim().slice(0, LIMIT[k]);
   }
   return out;
@@ -62,12 +63,18 @@ export function mountMessageUI() {
   const row = document.createElement('div'); row.className = 'msg-row';
   const apply = document.createElement('button'); apply.className = 'msg-apply'; apply.type = 'button'; apply.textContent = '카드에 적기';
   const copy = document.createElement('button'); copy.className = 'msg-copy'; copy.type = 'button'; copy.textContent = '링크 복사';
-  const note = document.createElement('div'); note.className = 'msg-note'; note.textContent = '메시지는 링크 안에만 담겨요. 어디에도 저장되지 않아요.';
+  const note = document.createElement('div'); note.className = 'msg-note'; note.textContent = '메시지는 링크의 # 뒷부분에만 담겨 서버로 보내지지 않고, 어디에도 저장되지 않아요. 링크를 받은 사람은 누구나 볼 수 있으니 비밀 이야기는 적지 마세요.';
   row.append(apply, copy); panel.append(row, note);
-  const linkFor = () => { const u = new URL(location.href); u.searchParams.set('to', fTo.value); u.searchParams.set('msg', fMsg.value); u.searchParams.set('from', fFrom.value); return u.toString(); };
+  // the share link keeps the page's own options (such as ?art=codex) but drops capture settings and any message in the query
+  const linkFor = () => {
+    const u = new URL(location.href);
+    for (const k of ['to', 'msg', 'from', 'size', 'capture']) u.searchParams.delete(k);
+    u.hash = new URLSearchParams({ to: fTo.value, msg: fMsg.value, from: fFrom.value }).toString();
+    return u.toString();
+  };
   btn.addEventListener('click', (e) => { e.stopPropagation(); panel.classList.toggle('open'); });
   panel.addEventListener('pointerdown', (e) => e.stopPropagation());
-  apply.addEventListener('click', () => { location.href = linkFor(); });
+  apply.addEventListener('click', () => { history.replaceState(null, '', linkFor()); location.reload(); });
   copy.addEventListener('click', async () => {
     const url = linkFor();
     try { await navigator.clipboard.writeText(url); copy.textContent = '복사했어요!'; } catch (e) { prompt('이 링크를 복사하세요', url); }

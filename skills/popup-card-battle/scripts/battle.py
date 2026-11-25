@@ -145,7 +145,7 @@ def gallery(root: Path):
                          video=f'videos/{name}.mp4', poster=f'videos/{name}.jpg', notes=notes))
     (root / 'gallery.json').write_text(json.dumps(rows, ensure_ascii=False, indent=2))
     tpl = (Path(__file__).parent / 'gallery.html').read_text()
-    (root / 'index.html').write_text(tpl.replace('/*ROWS*/[]', json.dumps(rows, ensure_ascii=False)))
+    (root / 'index.html').write_text(tpl.replace('/*ROWS*/[]', json.dumps(rows, ensure_ascii=False).replace('<', '\\u003c')))   # model notes can never close the <script>
     print(f'{len(rows)} designs -> gallery.json, index.html')
 
 

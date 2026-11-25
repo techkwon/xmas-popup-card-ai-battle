@@ -6,7 +6,8 @@
 
 - 갤러리: [`index.html`](index.html) (정적 서버로 열기: `python3 -m http.server` 후 `http://localhost:8000/battle/`)
 - 프롬프트: [`../skills/popup-card-battle/prompts/battle.md`](../skills/popup-card-battle/prompts/battle.md)
-- 카드마다 오른쪽 아래 **✉ 메시지 쓰기**로 문구를 바꾸고 **링크 복사**로 보낼 수 있다. 메시지는 주소(URL)에만 담기고 어디에도 저장·전송되지 않는다.
+- 카드마다 오른쪽 아래 **✉ 메시지 쓰기**로 문구를 바꾸고 **링크 복사**로 보낼 수 있다. 메시지는 주소의 `#` 뒷부분에만 담겨 서버로도 보내지지 않고, 어디에도 저장되지 않는다.
+  (공개 후 안전 점검에서 공용 `kit/message.js`를 `?` 대신 `#`을 쓰도록 바꿨다. 모델이 쓴 카드 코드는 손대지 않았다.)
 
 ## 결과
 
