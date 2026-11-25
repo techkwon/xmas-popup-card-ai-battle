@@ -1,0 +1,16 @@
+{
+  "engine": "astra",
+  "model": "gpt-6.2-astra",
+  "effort": "xhigh",
+  "prompt": "battle",
+  "exit": 0,
+  "minutes": 18.9,
+  "finished": "2026-11-25 10:42",
+  "usage": {
+    "input_tokens": 4666862,
+    "cached_input_tokens": 4563328,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 41745,
+    "reasoning_output_tokens": 9840
+  }
+}

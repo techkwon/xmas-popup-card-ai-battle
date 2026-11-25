@@ -1,0 +1,4 @@
+- [호두까기 인형의 성탄극장](/private/tmp/xmas-battle/astra/design-1/index.html) — 표지가 직각으로 열리면 병정이 북을 치고 발레리나가 춤을 춥니다. 편지는 무대 앞 관람권에 인쇄됩니다. [미리보기](/private/tmp/xmas-battle/astra/design-1/shots/t6.png)
+- [북극 고래 우편선](/private/tmp/xmas-battle/astra/design-2/index.html) — 항로도가 180도로 펼쳐지면 V자 접지에서 고래 비행선이 솟아오릅니다. 꼬리 프로펠러가 돌고 산타의 우편 곤돌라가 흔들립니다. [미리보기](/private/tmp/xmas-battle/astra/design-2/shots/t6.png)
+
+각 폴더에 `index.html`, 자바스크립트 모듈 3개, 한국어 `NOTES.md`를 담았습니다. 두 카드 모두 Chrome에서 3.5초 안에 완전히 펼쳐졌습니다. 1920×1080 캡처에서 최대 길이 메시지와 재시작 후 동일 프레임 재현을 확인했으며, 콘솔 오류는 없었습니다.

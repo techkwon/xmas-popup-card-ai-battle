@@ -1,0 +1,10 @@
+{
+  "engine": "carbon",
+  "model": "gemini-4-carbon-high",
+  "effort": null,
+  "prompt": "battle",
+  "exit": 0,
+  "minutes": 50.0,
+  "finished": "2026-11-25 11:13",
+  "note": "agy deleted run.log while cleaning up; minutes from folder times (10:23 start, 11:13 last change); usage unknown"
+}

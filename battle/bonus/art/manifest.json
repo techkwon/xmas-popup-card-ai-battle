@@ -1,0 +1,115 @@
+[
+  {
+    "file": "backdrop.png",
+    "kind": "backdrop",
+    "what": "Moonlit winter sky above low distant hills"
+  },
+  {
+    "file": "ground.png",
+    "kind": "ground",
+    "what": "Overhead snow, winding path, and frozen pond"
+  },
+  {
+    "file": "cover.png",
+    "kind": "cover",
+    "what": "Christmas wreath and a star-sealed envelope"
+  },
+  {
+    "file": "tree.png",
+    "kind": "piece",
+    "what": "Village Christmas tree with an amber star",
+    "role": "hero",
+    "size": "large"
+  },
+  {
+    "file": "post-office.png",
+    "kind": "piece",
+    "what": "Cranberry village post office",
+    "role": "building",
+    "size": "large"
+  },
+  {
+    "file": "sorting-house.png",
+    "kind": "piece",
+    "what": "Blue mail-sorting house with double doors",
+    "role": "building",
+    "size": "large"
+  },
+  {
+    "file": "lantern-cottage.png",
+    "kind": "piece",
+    "what": "Sage cottage with glowing bay windows",
+    "role": "building",
+    "size": "medium"
+  },
+  {
+    "file": "pine-tall.png",
+    "kind": "piece",
+    "what": "Tall snow-dusted fir",
+    "role": "tree",
+    "size": "large"
+  },
+  {
+    "file": "pine-small.png",
+    "kind": "piece",
+    "what": "Small snow-dusted fir",
+    "role": "tree",
+    "size": "small"
+  },
+  {
+    "file": "holly-bush.png",
+    "kind": "piece",
+    "what": "Low holly bush with cranberry berries",
+    "role": "tree",
+    "size": "small"
+  },
+  {
+    "file": "postmaster.png",
+    "kind": "piece",
+    "what": "Postmaster holding a sealed envelope",
+    "role": "character",
+    "size": "medium"
+  },
+  {
+    "file": "child.png",
+    "kind": "piece",
+    "what": "Bundled child holding a small parcel",
+    "role": "character",
+    "size": "medium"
+  },
+  {
+    "file": "fox.png",
+    "kind": "piece",
+    "what": "Seated fox in a cranberry scarf",
+    "role": "character",
+    "size": "small"
+  },
+  {
+    "file": "snowman.png",
+    "kind": "piece",
+    "what": "Snowman with a cranberry scarf",
+    "role": "character",
+    "size": "medium"
+  },
+  {
+    "file": "mailbox.png",
+    "kind": "piece",
+    "what": "Cranberry postbox with an envelope emblem",
+    "role": "prop",
+    "size": "small"
+  },
+  {
+    "file": "gifts.png",
+    "kind": "piece",
+    "what": "Three joined ribbon-wrapped parcels",
+    "role": "prop",
+    "size": "small"
+  },
+  {
+    "file": "sleigh.png",
+    "kind": "piece",
+    "what": "Side-view Christmas air-mail sleigh",
+    "role": "flyer",
+    "size": "large"
+  }
+]

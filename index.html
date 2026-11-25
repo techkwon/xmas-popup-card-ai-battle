@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>크리스마스 팝업 카드</title>
+<link rel="icon" href="data:,">
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #d9dbe2; }
+  canvas { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; }
+  .hint { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); font: italic 14px/1.3 Georgia, serif;
+          color: #fff8ec; opacity: .85; letter-spacing: .03em; pointer-events: none; text-shadow: 0 1px 3px #2a2a50; }
+</style>
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js", "papercraft/": "./" } }</script>
+</head>
+<body>
+<div class="hint" id="hint">방향키로 산타 걷기 · 클릭하면 카드가 접혀요</div>
+<script type="module" src="./scene.js"></script>
+</body>
+</html>

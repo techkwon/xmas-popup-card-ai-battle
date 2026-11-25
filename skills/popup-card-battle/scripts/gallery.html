@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 팝업 카드 대결</title>
+<style>
+:root{--bg:#15110f;--card:#221b17;--ink:#f3ead9;--dim:#b9a98f;--gold:#d9b25c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,-apple-system,"Apple SD Gothic Neo",sans-serif}
+header{padding:32px 16px 8px;max-width:1280px;margin:auto}h1{margin:0;font-size:28px}header p{color:var(--dim);margin:6px 0 0}
+section{max-width:1280px;margin:auto;padding:16px}h2{font-size:20px;margin:24px 0 10px;color:var(--gold)}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:16px}
+.item{background:var(--card);border-radius:12px;overflow:hidden}.item video{width:100%;display:block;aspect-ratio:16/9;background:#000}
+.meta{padding:12px 14px}.meta h3{margin:0 0 6px;font-size:16px}.meta a{color:var(--gold)}
+.notes{color:var(--dim);font-size:13px;white-space:pre-wrap;max-height:9em;overflow:auto;margin-top:8px}
+</style></head><body>
+<header><h1>크리스마스 팝업 카드 — AI 모델 대결</h1>
+<p>같은 프롬프트와 같은 papercraft 키트로 각 모델이 코드만 써서 만든 카드입니다. 카드를 열면 오른쪽 아래 “✉ 메시지 쓰기”로 문구를 바꾸고 링크를 복사할 수 있어요.</p></header>
+<main id="g"></main>
+<script>
+const ROWS = /*ROWS*/[];
+const NAMES = { fable: 'Claude Fable 5.2', astra: 'GPT-6.2 Astra', carbon: 'Gemini 4 Carbon', bonus: '번외편 — Codex 그림 + Fable 코드', 'opus-test': '프롬프트 시험 — Claude Opus 5.5' };
+const ORDER = ['fable', 'astra', 'carbon', 'bonus', 'opus-test'];
+const g = document.getElementById('g');
+const engs = [...new Set(ROWS.map(r => r.eng))].sort((a, b) => (ORDER.indexOf(a) + 99) % 99 - (ORDER.indexOf(b) + 99) % 99);
+for (const e of engs) {
+  const s = document.createElement('section');
+  const h = document.createElement('h2'); h.textContent = NAMES[e] || e; s.append(h);
+  const row = document.createElement('div'); row.className = 'row';
+  for (const r of ROWS.filter(x => x.eng === e)) {
+    const it = document.createElement('div'); it.className = 'item';
+    const v = document.createElement('video'); v.src = r.video; v.poster = r.poster; v.controls = true; v.muted = true; v.loop = true; v.playsInline = true; v.preload = 'none';
+    const m = document.createElement('div'); m.className = 'meta';
+    const t = document.createElement('h3'); t.textContent = (r.notes.split('\n')[0] || r.design).replace(/^#\s*/, '');
+    const a = document.createElement('a'); a.href = r.href; a.textContent = '카드 열기 (HTML)'; a.target = '_blank'; a.rel = 'noopener';
+    const n = document.createElement('div'); n.className = 'notes'; const ls = r.notes.split('\n'); n.textContent = (ls[0].startsWith('#') ? ls.slice(1) : ls).join('\n').replace(/\*\*/g, '').trim();
+    m.append(t, a, n); it.append(v, m); row.append(it);
+  }
+  s.append(row); g.append(s);
+}
+</script></body></html>

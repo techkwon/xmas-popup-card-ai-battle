@@ -1,0 +1,45 @@
+{
+  "engine": "fable",
+  "model": "claude-fable-5-2",
+  "effort": "xhigh",
+  "prompt": "battle",
+  "exit": 0,
+  "minutes": 71.6,
+  "finished": "2026-11-25 11:35",
+  "cost_usd": 34.1151624,
+  "turns": 131,
+  "usage": {
+    "input_tokens": 202,
+    "cache_creation_input_tokens": 693004,
+    "cache_read_input_tokens": 46914012,
+    "output_tokens": 341067,
+    "output_tokens_details": {
+      "thinking_tokens": 199980
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 693004,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1862,
+        "cache_read_input_tokens": 692133,
+        "cache_creation_input_tokens": 871,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 871
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  }
+}

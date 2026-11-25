@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>북극성 우체국의 크리스마스이브 · 팝업 카드</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #17110e; }
+  #stage { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+  canvas { display: block; touch-action: none; cursor: pointer; }
+  .hint { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); font: 22px/1.2 "Nanum Pen Script", cursive;
+          color: #fff3dc; opacity: .82; letter-spacing: .02em; pointer-events: none; text-shadow: 0 1px 4px rgba(0, 0, 0, .7); white-space: nowrap; }
+  @media (max-width: 720px) { .hint { bottom: 70px; font-size: 19px; } }
+  .loading { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; font: 30px/1.2 "Nanum Pen Script", cursive;
+             color: #f3e3c4; background: #17110e; transition: opacity .5s; pointer-events: none; }
+  .loading.done { opacity: 0; }
+</style>
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js", "papercraft/": "../../kit/" } }</script>
+</head>
+<body>
+<div id="stage"></div>
+<div class="loading" id="loading">카드를 준비하고 있어요…</div>
+<div class="hint" id="hint">카드를 누르면 처음부터 다시 펼쳐져요</div>
+<!-- 북극성 우체국의 크리스마스이브: 90도 팝업 카드. main.js(무대·시계·캡처 훅), card.js(카드와 종이 기구), letter.js(편지·표지 인쇄), life.js(눈·연기) -->
+<script type="module" src="./main.js"></script>
+</body>
+</html>

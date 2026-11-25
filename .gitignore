@@ -1,0 +1,8 @@
+frames/
+shots/
+.omx/
+*.log
+.DS_Store
+__pycache__/
+codex/last.txt
+codex/*.log

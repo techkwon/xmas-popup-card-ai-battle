@@ -1,0 +1,28 @@
+**북극성 우체국의 크리스마스이브** 팝업 카드 아트 세트를 [art 폴더](/private/tmp/xmas-battle/bonus/art)에 저장했습니다. 내장 `image_gen`으로 불투명 배경 3장과 투명 팝업 조각 14장을 각각 생성했습니다.
+
+17장을 모두 육안으로 검토하고 복사본이 생성 원본과 바이트 단위로 일치하는지 확인했습니다. 조각 14개는 알파 임계값 64와 128에서 각각 구멍 없는 단일 실루엣으로 확인됐습니다. 일부 조각은 한 축에서 프레임의 최대 98%를 채워 요청하신 85%보다 여백이 좁습니다.
+
+[조립용 매니페스트](/private/tmp/xmas-battle/bonus/art/manifest.json) · [한국어 이야기 3줄](/private/tmp/xmas-battle/bonus/art/STORY.md) · [파일별 생성 프롬프트](/private/tmp/xmas-battle/bonus/.omx/state/christmas-art/image-prompts.json)
+
+```text
+art/backdrop.png
+art/ground.png
+art/cover.png
+art/tree.png
+art/post-office.png
+art/sorting-house.png
+art/lantern-cottage.png
+art/pine-tall.png
+art/pine-small.png
+art/holly-bush.png
+art/postmaster.png
+art/child.png
+art/fox.png
+art/snowman.png
+art/mailbox.png
+art/gifts.png
+art/sleigh.png
+art/manifest.json
+art/STORY.md
+```
+
